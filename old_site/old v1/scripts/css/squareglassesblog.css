@@ -1,0 +1,605 @@
+
+html {
+padding: 0;
+margin: 0;
+}
+
+body {
+font-size:16px;
+color:#282828;
+text-align:center;
+background-color:#F9F7F6;
+padding: 0;
+margin: 0;
+line-height: 1.3;
+font-style:normal;
+}
+
+body, #page .post .postmetadata small {
+/*font-family:"FranklinGothicURW-Boo", "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, Sans-Serif;*/
+font-family: franklin-gothic-urw-1, franklin-gothic-urw-2, sans-serif;
+}
+
+h1,h2, h3, h4, h5, h6, #page .post small {
+/*font-family:"FranklinGothicURW-Dem", "Trebuchet MS", "Helvetica Neue", Helvetica, Arial, Sans-Serif;*/
+font-family: franklin-gothic-urw-1, franklin-gothic-urw-2, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
+p {
+margin: 0 0 20px;
+padding: 0;
+}
+
+a {
+color: #EB5E29;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+
+#page {
+color:#4c4c4c;
+text-align:left;
+width:700px;
+margin:0 auto;
+}
+
+#header {
+display: block;
+padding: 20px 0;
+border: 1px solid #EB5E29;
+border-width: 1px 0;
+overflow: hidden;
+margin: 40px 0 50px;
+}
+
+#header h1 a {
+text-decoration:none;
+background:url('http://squareglasses.files.wordpress.com/2011/09/logo.png') no-repeat top left;
+display: block;
+width: 281px;
+height: 30px;
+text-indent: -9999px;
+}
+
+#header .description {
+display: none;
+}
+
+#blog_title_hide {
+display:none;
+}
+
+#content {
+clear: left;
+float:left;
+width:400px;
+overflow:hidden;
+margin:0;
+padding:0 0 20px;
+}
+
+.narrowcolumn .postmetadata {
+text-align:left;
+padding:8px 0;
+border: 1px solid #AABEC4;
+border-width: 1px 0;
+font-size: 12px;
+}
+
+.narrowcolumn .postmetadata a {
+padding:1px 2px;
+}
+
+.thread-alt {
+margin:0;
+padding:10px;
+}
+
+small {
+font-size:13px;
+line-height:1.6em;
+padding:2px 0;
+}
+
+h2, h3, h4, h5, h6 {
+font-weight:bold;
+font-style:normal;
+margin: 0 0 10px;
+clear: both;
+}
+
+h1,h2,h3 {
+line-height: 1.1;
+}
+
+h4,h5,h6 {
+font-size: 100%;
+}
+
+h1 {
+font-size:30px;
+margin:0;
+}
+
+h3 {
+font-size:20px;
+}
+
+h2 a:hover,h3 a:hover {
+text-decoration: none;
+border-bottom: 1px solid;
+}
+
+#header p {
+margin-bottom:0;
+margin-left:220px;
+margin-top:0;
+}
+
+.description {
+color:#333333;
+margin-left:220px;
+}
+
+h2 {
+font-size:25px;
+clear:both;
+}
+
+h2.pagetitle {
+margin-top:2px;
+}
+
+#sidebar h2 {
+color:#9BC6D3;
+text-transform:capitalize;
+margin:7px 0;
+padding:0;
+font-size: 18px;
+}
+
+#sidebar li.widget {
+margin-bottom: 50px;
+}
+
+#sidebar li a {
+font-size: 13px;
+color: #777;
+}
+
+#sidebar li a:hover {
+color: #EB5E29;
+}
+
+#sidebar .widget_tag_cloud a,
+#sidebar .wp_widget_tag_cloud a {
+font-size: 13px !important;
+}
+
+#sidebar .widget_calendar {
+font-size: 13px;
+}
+
+.commentlist li,#commentform input,#commentform textarea {
+font:"Helvetica Neue", Helvetica, Arial, Sans-Serif;
+}
+
+.commentlist li {
+position:relative;
+font-weight:bold;
+list-style:none;
+margin:10px 0;
+padding:5px 0;
+}
+
+.commentlist li .avatar {
+position:absolute;
+right:15px;
+border:1px solid #ccc;
+padding:2px;
+}
+
+.commentlist cite,.commentlist cite a {
+font-weight:bold;
+font-style:normal;
+}
+
+.commentlist p {
+font-weight:normal;
+line-height:1.5em;
+text-transform:none;
+margin:10px 5px 10px 0;
+}
+
+#commentform p {
+margin:5px 0;
+}
+
+.commentmetadata {
+font-weight:normal;
+clear:both;
+display:block;
+margin:0;
+}
+
+.commentmetadata a {
+color: #777;
+}
+
+#sidebar {
+/*font:1em "Helvetica Neue", Helvetica, Arial, Sans-Serif;*/
+font-family: franklin-gothic-urw-1, franklin-gothic-urw-2, sans-serif;
+overflow:hidden;
+width:180px;
+float:right;
+text-align:left;
+padding:0 0 0 8px;
+}
+
+#sidebar ul ul li,#sidebar ul ol li,.nocomments,.postmetadata,blockquote,strike {
+color:#777;
+}
+
+code {
+font-size:13px;
+}
+
+acronym,abbr,span.caps {
+font-size:.13px;
+letter-spacing:.07em;
+cursor:help;
+}
+
+#wp-calendar #prev a {
+padding-left:10px;
+text-align:left;
+}
+
+#wp-calendar a {
+display:block;
+}
+
+#wp-calendar caption {
+font-size: 13px;
+text-align:center;
+width:100%;
+}
+
+#wp-calendar th {
+font-style:normal;
+text-transform:capitalize;
+}
+
+.widecolumn .post {
+margin:0;
+padding-bottom: 0;
+}
+
+.narrowcolumn .post {
+margin:0;
+padding-bottom: 80px;
+}
+
+.postmetadata {
+clear:both;
+}
+
+#page .post small {
+font-size: 15px;
+padding-bottom: 10px;
+display: block;
+}
+
+#page .post .postmetadata small {
+color: #777;
+font-size: 13px;
+margin-bottom: 0;
+display:inline;
+}
+
+p#tags {
+font-size: 13px;
+}
+
+.widecolumn .postmetadata {
+margin:30px 0;
+}
+
+#footer {
+width:100%;
+clear:both;
+text-align:left;
+margin:0 auto;
+padding:0 0 0 1px;
+font-size: 13px;
+}
+
+#footer, #footer a {
+color: #999;
+}
+
+hr {
+width:400px;
+margin:0 0 30px;
+display: none;
+}
+
+h3.comments {
+margin:40px auto 20px;
+padding:0;
+}
+
+p img {
+margin:0 5px;
+padding:0;
+}
+
+img.centered,img.aligncenter {
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+img.alignright {
+display:inline;
+margin:0 0 2px 7px;
+padding:4px;
+}
+
+img.alignleft {
+display:inline;
+margin:0 7px 2px 0;
+padding:4px 0 12px 0;
+}
+
+.alignright {
+float:right;
+}
+
+.alignleft {
+float:left;
+}
+
+html>body .entry ul {
+margin-left:0;
+list-style:none;
+text-indent:-10px;
+padding:0 0 0 10px;
+}
+
+html>body .entry li {
+margin:7px 0 8px 10px;
+}
+
+.entry ol {
+margin:0;
+padding:0 0 0 35px;
+}
+
+.entry ol li {
+margin:0;
+padding:0;
+}
+
+.postmetadata ul,.postmetadata li {
+display:inline;
+list-style-type:none;
+list-style-image:none;
+}
+
+#sidebar ul,#sidebar ul ol {
+margin:0;
+padding:0;
+}
+
+#sidebar ul li {
+list-style-type:none;
+list-style-image:none;
+margin-bottom:15px;
+}
+
+#sidebar ul p,#sidebar ul select {
+margin:5px 0 0;
+}
+
+#sidebar ul ul,#sidebar ul ol {
+margin:5px 0 0;
+}
+
+#sidebar ul ul ul,#sidebar ul ol {
+margin:0;
+}
+
+ol li,#sidebar ul ol li {
+list-style:none;
+}
+
+#sidebar ul ul li,#sidebar ul ol li {
+margin:3px 0 0;
+padding:0;
+}
+
+#sidebar .widget_categories li,
+#sidebar .widget_tag_cloud li {
+display: inline;
+}
+
+span.sbox_l {
+background:white url('srch_l.gif') no-repeat top left;
+float:left;
+width:19px;
+height:19px;
+}
+
+span.sbox_r {
+background:white url('srch_r.gif') no-repeat top left;
+float:left;
+width:19px;
+height:19px;
+}
+
+#searchform {
+background:white url('srch_bg.gif') repeat-x top left;
+float:left;
+border:0;
+height:19px;
+width:142px;
+font:11px/13px arial;
+color:#000;
+padding:3px;
+}
+
+.entry form {
+text-align:center;
+}
+
+select {
+width:130px;
+}
+
+#commentform input {
+width:170px;
+margin:5px 5px 1px 0;
+padding:2px;
+}
+
+#commentform textarea {
+width:95%;
+padding:2px;
+}
+
+#commentform #submit {
+margin:5px 0;
+}
+
+.commentlist {
+margin:0;
+padding:0;
+}
+
+.nocomments {
+text-align:center;
+margin:0;
+padding:0;
+}
+
+#sidebar form {
+margin:0;
+}
+
+#pagenav {
+margin:0;
+}
+
+#sidebar li {
+clear:both;
+}
+
+#akismetwrap {
+float:right;
+}
+
+#wp-calendar {
+empty-cells:show;
+width:155px;
+margin:10px auto 0;
+}
+
+#wp-calendar #next a {
+padding-right:10px;
+text-align:right;
+}
+
+#wp-calendar td {
+text-align:center;
+padding:3px 0;
+}
+
+acronym,abbr {
+border-bottom:1px dashed #999;
+}
+
+blockquote {
+padding-left:20px;
+border-left:5px solid #ddd;
+margin:15px 30px 0 10px;
+}
+
+blockquote cite {
+display:block;
+margin:5px 0 0;
+}
+
+.center {
+text-align:center;
+}
+
+.hrhide {
+display:none;
+}
+
+a img {
+border:none;
+}
+
+.navigation {
+display:block;
+text-align:center;
+margin-bottom:10px;
+overflow: hidden;
+}
+
+#commentform p small {
+font-size: 12px;
+}
+
+.aligncenter,div.aligncenter {
+display:block;
+margin-left:auto;
+margin-right:auto;
+}
+
+.wp-caption {
+border:1px solid #ddd;
+text-align:center;
+padding-top:4px;
+-moz-border-radius:3px;
+-khtml-border-radius:3px;
+-webkit-border-radius:3px;
+border-radius:3px;
+margin:10px;
+}
+
+.wp-caption img {
+border:0 none;
+margin:0;
+padding:0;
+}
+
+.wp-caption p.wp-caption-text {
+font-size:13px;
+line-height:17px;
+margin:0;
+padding:0 4px 5px;
+}
+
+.sticky {
+margin-bottom:10px;
+padding:5px 20px 10px 10px;
+}
+
+.sticky hr {
+display:none;
+}
+
+div.sharedaddy div.sd-block {
+border:0 !important;
+padding:10px 0 !important;
+}
+
+/*@font-face {font-family: 'FranklinGothicURW-Dem';src: url('webfonts/13AEC3_0.eot');src: url('webfonts/13AEC3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/13AEC3_0.woff') format('woff'),url('webfonts/13AEC3_0.ttf') format('truetype'),url('webfonts/13AEC3_0.svg#wf') format('svg');}
+@font-face {font-family: 'FranklinGothicURW-Boo';src: url('webfonts/13AEC3_1.eot');src: url('webfonts/13AEC3_1.eot?#iefix') format('embedded-opentype'),url('webfonts/13AEC3_1.woff') format('woff'),url('webfonts/13AEC3_1.ttf') format('truetype'),url('webfonts/13AEC3_1.svg#wf') format('svg');}*/
