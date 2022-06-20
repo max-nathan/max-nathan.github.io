@@ -1,0 +1,11 @@
+.downloads li {
+	margin-left: -26px;
+	list-style-type: none;
+}
+
+.pubs {
+	/*/margin-top: -32px;  for IE5 and IE6 in quirks mode 
+	m\argin-top: -32px;  for IE6 in standards mode*/ 
+	margin-left: 0px;
+	width: 600px;
+}
