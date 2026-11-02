@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--
+  Tumblr theme matching max-nathan.github.io
+  HOW TO INSTALL: Tumblr > your blog > Edit appearance > Edit theme >
+  "Edit HTML" > select all, paste this whole file, then "Update Preview" and "Save".
+  Colours and fonts match assets/style.css on the main site.
+  Change the two URLs marked MAIN SITE if your address changes.
+-->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{Title}{block:PostSummary} · {PostSummary}{/block:PostSummary}</title>
+  {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="alternate" type="application/rss+xml" href="{RSS}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper:#ffffff; --panel:#f4f4f6; --ink:#222222; --ink-soft:#555555;
+      --rule:#dddddd; --accent:#332288; --accent-2:#cc6677; --label:#882255;
+      --sans:"Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root { --paper:#16161a; --panel:#222228; --ink:#eeeeee; --ink-soft:#aaaaaa;
+              --rule:#3a3a40; --accent:#88ccee; --accent-2:#cc6677; --label:#dd8899; }
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); font-size:1.0625rem; line-height:1.65; }
+    a { color:var(--accent); text-underline-offset:0.18em; }
+    a:hover { color:var(--label); }
+    img, video, iframe { max-width:100%; height:auto; }
+    .wrap { max-width:44rem; margin:0 auto; padding:0 1.25rem; }
+    header { border-bottom:1px solid var(--rule); }
+    header .wrap { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; padding-top:1.1rem; padding-bottom:1.1rem; }
+    .site-name { font-family:var(--sans); font-size:1.35rem; font-weight:600; color:var(--ink); text-decoration:none; }
+    nav { display:flex; gap:1.4rem; flex-wrap:wrap; }
+    nav a { color:var(--ink-soft); text-decoration:none; font-size:0.95rem; }
+    nav a:hover { color:var(--ink); }
+    .blurb { color:var(--ink-soft); padding:1.6rem 0 0.4rem; }
+    article { padding:2rem 0; border-bottom:1px solid var(--rule); }
+    h1, h2 { font-family:var(--sans); font-weight:600; line-height:1.25; }
+    h2 { font-size:1.45rem; margin:0 0 0.6rem; }
+    h2 a { color:var(--ink); text-decoration:none; }
+    blockquote { margin:1rem 0; padding-left:0.9rem; border-left:3px solid var(--accent-2); font-family:var(--sans); font-size:1.15rem; }
+    .caption, .source { color:var(--ink-soft); font-size:0.95rem; }
+    .meta { font-size:0.85rem; color:var(--ink-soft); margin-top:1rem; display:flex; gap:1rem; flex-wrap:wrap; }
+    .meta a { color:var(--ink-soft); text-decoration:none; }
+    .tags a { margin-right:0.5rem; }
+    .pagination { display:flex; justify-content:space-between; padding:2rem 0; }
+    footer { border-top:1px solid var(--rule); padding:1.6rem 0 2.4rem; font-size:0.88rem; color:var(--ink-soft); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="site-name" href="/">{Title}</a>
+    <nav>
+      <a href="https://max-nathan.github.io/">Main site</a>            <!-- MAIN SITE -->
+      <a href="https://max-nathan.github.io/publications.html">Publications</a> <!-- MAIN SITE -->
+      <a href="/archive">Archive</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  {block:IndexPage}{block:Description}<div class="blurb">{Description}</div>{/block:Description}{/block:IndexPage}
+  {block:TagPage}<div class="blurb">Posts tagged <strong>#{Tag}</strong></div>{/block:TagPage}
+
+  {block:Posts}
+  <article>
+    {block:Text}
+      {block:Title}<h2><a href="{Permalink}">{Title}</a></h2>{/block:Title}
+      {Body}
+    {/block:Text}
+
+    {block:Photo}
+      <img src="{PhotoURL-HighRes}" alt="{PhotoAlt}">
+      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+    {/block:Photo}
+
+    {block:Photoset}
+      {Photoset-700}
+      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+    {/block:Photoset}
+
+    {block:Quote}
+      <blockquote>{Quote}</blockquote>
+      {block:Source}<div class="source">&mdash; {Source}</div>{/block:Source}
+    {/block:Quote}
+
+    {block:Link}
+      <h2><a href="{URL}" {Target}>{Name} &rarr;</a></h2>
+      {block:Description}{Description}{/block:Description}
+    {/block:Link}
+
+    {block:Video}
+      {Video-700}
+      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+    {/block:Video}
+
+    {block:Audio}
+      {AudioEmbed}
+      {block:Caption}<div class="caption">{Caption}</div>{/block:Caption}
+    {/block:Audio}
+
+    {block:Chat}
+      {block:Title}<h2>{Title}</h2>{/block:Title}
+      {block:Lines}<p>{block:Label}<strong>{Label}</strong> {/block:Label}{Line}</p>{/block:Lines}
+    {/block:Chat}
+
+    <div class="meta">
+      {block:Date}<a href="{Permalink}">{Month} {DayOfMonth}, {Year}</a>{/block:Date}
+      {block:HasTags}<span class="tags">{block:Tags}<a href="{TagURL}">#{Tag}</a>{/block:Tags}</span>{/block:HasTags}
+      {block:NoteCount}<span>{NoteCountWithLabel}</span>{/block:NoteCount}
+    </div>
+
+    {block:PostNotes}<div class="caption">{PostNotes}</div>{/block:PostNotes}
+  </article>
+  {/block:Posts}
+
+  {block:Pagination}
+  <div class="pagination">
+    <span>{block:PreviousPage}<a href="{PreviousPage}">&larr; Newer</a>{/block:PreviousPage}</span>
+    <span>{block:NextPage}<a href="{NextPage}">Older &rarr;</a>{/block:NextPage}</span>
+  </div>
+  {/block:Pagination}
+</main>
+
+<footer>
+  <div class="wrap">Max Nathan &middot; <a href="https://max-nathan.github.io/">max-nathan.github.io</a></div>
+</footer>
+
+</body>
+</html>

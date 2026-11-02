@@ -1,0 +1,201 @@
+/* =========================================================
+   Max Nathan — site stylesheet
+   One file controls the whole look. Colours are defined once
+   below as variables; change them here and every page updates.
+   ========================================================= */
+
+/* Colours: Paul Tol's "muted" scheme, which is colour-blind safe
+   (personal.sron.nl/~pault). Indigo and rose pick up the jacket and
+   shirt in the portrait. */
+:root {
+  --paper:      #ffffff;   /* page background */
+  --panel:      #f4f4f6;   /* cards, theme boxes */
+  --ink:        #222222;   /* body text */
+  --ink-soft:   #555555;   /* secondary text */
+  --rule:       #dddddd;   /* hairlines (Tol pale grey) */
+  --accent:     #332288;   /* links (Tol indigo) */
+  --accent-2:   #cc6677;   /* bars, underlines: decoration only (Tol rose) */
+  --label:      #882255;   /* small coloured text, link hover (Tol wine) */
+
+  --sans:  "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  --measure: 44rem;        /* comfortable reading width */
+  --wide:    56rem;        /* page width, header included: keeps the menu close to the text */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:    #16161a;
+    --panel:    #222228;
+    --ink:      #eeeeee;
+    --ink-soft: #aaaaaa;
+    --rule:     #3a3a40;
+    --accent:   #88ccee;   /* Tol cyan */
+    --accent-2: #cc6677;
+    --label:    #dd8899;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 0.18em; }
+a:hover { color: var(--label); }
+
+h1, h2, h3 { font-family: var(--sans); font-weight: 600; line-height: 1.25; letter-spacing: -0.005em; }
+h1 { font-size: 2.3rem; margin: 0 0 0.4rem; }
+h2 { font-size: 1.5rem; margin: 2.8rem 0 1rem; padding-bottom: 0.4rem; border-bottom: 1px solid var(--rule); }
+h3 { font-size: 1.15rem; margin: 0 0 0.3rem; }
+
+.wrap { max-width: var(--wide); margin: 0 auto; padding: 0 1.25rem; }
+
+/* ---------- Header / navigation ---------- */
+
+.site-header { border-bottom: 1px solid var(--rule); background: var(--paper); }
+.site-header .wrap {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; flex-wrap: wrap; padding-top: 1.1rem; padding-bottom: 1.1rem;
+}
+.site-name {
+  font-family: var(--sans); font-size: 1.35rem; font-weight: 600;
+  color: var(--ink); text-decoration: none;
+}
+.site-nav { display: flex; gap: 1.4rem; flex-wrap: wrap; margin-left: auto; }   /* stays right even with no name (home page) */
+.site-nav a {
+  color: var(--ink-soft); text-decoration: none; font-size: 0.95rem;
+  padding: 0.2rem 0; border-bottom: 2px solid transparent;
+}
+.site-nav a:hover { color: var(--ink); }
+.site-nav a[aria-current="page"] { color: var(--ink); border-bottom-color: var(--accent-2); }
+
+main.wrap { padding-top: 2.5rem; padding-bottom: 4rem; }
+
+/* ---------- Home / about ---------- */
+
+/* Bio text starts at the left edge like every other page; the photo sits on the right,
+   as figures do on the Publications page. */
+.intro {
+  display: grid; grid-template-columns: minmax(0, 1fr) 170px;
+  gap: 2.5rem; justify-content: space-between; align-items: start;
+}
+.intro .portrait { order: 2; margin-top: 0.4rem; }
+.portrait {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 3px;
+  background: var(--panel); display: block;
+}
+.role { font-size: 1.05rem; color: var(--ink-soft); margin: 0 0 1.4rem; }
+.role strong { color: var(--ink); font-weight: 600; }
+.lede { font-family: var(--sans); font-size: 1.22rem; line-height: 1.55; margin: 0 0 1rem; }
+.bio p { max-width: var(--measure); }
+
+/* Research themes: subheads with text, as on the Research page */
+.themes h3 { margin-top: 1.4rem; }
+.themes h3 a { color: var(--ink); text-decoration: none; }
+.themes h3 a:hover { color: var(--accent); text-decoration: underline; }
+.themes p { margin: 0; max-width: var(--measure); }
+
+.news { list-style: none; padding: 0; margin: 0; max-width: var(--measure); }
+.news li { display: grid; grid-template-columns: 6.5rem 1fr; gap: 1rem; padding: 0.55rem 0; border-bottom: 1px dotted var(--rule); }
+.news time { color: var(--ink-soft); font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+
+/* ---------- Research: paper cards ---------- */
+
+.jump { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 0.5rem; padding: 0; list-style: none; }
+.jump a {
+  font-size: 0.9rem; text-decoration: none; color: var(--ink-soft);
+  border: 1px solid var(--rule); border-radius: 999px; padding: 0.3rem 0.9rem;
+}
+.jump a:hover { color: var(--ink); border-color: var(--ink-soft); }
+
+.paper {
+  display: grid; grid-template-columns: 1fr 240px; gap: 1.6rem;
+  padding: 1.6rem 0; border-bottom: 1px solid var(--rule);
+}
+.paper figure { margin: 0; order: 2; }   /* figure sits on the right */
+.paper figure img {
+  width: 100%; aspect-ratio: 3 / 2; object-fit: contain; display: block;
+  background: #fff; border: 1px solid var(--rule); border-radius: 3px;
+}
+.paper figcaption { font-size: 0.78rem; color: var(--ink-soft); margin-top: 0.35rem; line-height: 1.4; }
+
+.paper .kind {
+  display: inline-block; font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--label); margin-bottom: 0.25rem; font-weight: 600;
+}
+.paper h3 a { color: var(--ink); text-decoration: none; }
+.paper h3 a:hover { color: var(--accent); text-decoration: underline; }
+.paper .authors { margin: 0; color: var(--ink-soft); font-size: 0.95rem; }
+.paper .venue { margin: 0 0 0.6rem; font-size: 0.95rem; }
+.paper .venue em { font-style: italic; }
+.paper .headline {
+  margin: 0.5rem 0 0.7rem; padding-left: 0.8rem; border-left: 3px solid var(--accent-2);
+  font-family: var(--sans); font-size: 1.02rem;
+}
+.paper details { font-size: 0.95rem; }
+.paper summary { cursor: pointer; color: var(--accent); }
+.paper details p { max-width: var(--measure); color: var(--ink-soft); }
+.paper .actions { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; padding: 0; list-style: none; }
+.paper .actions a {
+  font-size: 0.82rem; text-decoration: none; padding: 0.15rem 0.6rem;
+  border: 1px solid var(--rule); border-radius: 3px; color: var(--ink-soft);
+}
+.paper .actions a:hover { border-color: var(--accent); color: var(--accent); }
+
+.paper.nofig { grid-template-columns: 1fr; }
+.paper .status { margin: 0 0 0.3rem; font-size: 0.9rem; color: var(--label); }
+
+/* ---------- Compact publication list (articles, chapters) ---------- */
+
+.pubs { list-style: none; padding: 0; margin: 0; }
+.pubs > li {
+  display: grid; grid-template-columns: 3.5rem 1fr; gap: 1rem;
+  padding: 0.9rem 0; border-bottom: 1px dotted var(--rule);
+}
+.pubs .year { color: var(--ink-soft); font-size: 0.9rem; font-variant-numeric: tabular-nums; padding-top: 0.15rem; }
+.pubs .title { font-family: var(--sans); font-size: 1.05rem; font-weight: 600; }
+.pubs .title a { color: var(--ink); text-decoration: none; }
+.pubs .title a:hover { color: var(--accent); text-decoration: underline; }
+.pubs .with, .pubs .venue { color: var(--ink-soft); font-size: 0.93rem; }
+.pubs .venue em { color: var(--ink); }
+.pubs .flag { font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--label); font-weight: 600; margin-left: 0.4rem; }
+.pubs .actions { display: flex; flex-wrap: wrap; gap: 0.35rem; margin: 0.4rem 0 0; padding: 0; list-style: none; }
+.pubs .actions a {
+  font-size: 0.78rem; text-decoration: none; padding: 0.1rem 0.5rem;
+  border: 1px solid var(--rule); border-radius: 3px; color: var(--ink-soft);
+}
+.pubs .actions a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---------- Research & teaching pages ---------- */
+
+.prose { max-width: var(--measure); }
+.prose li { margin-bottom: 0.5rem; }
+.courses { list-style: none; padding: 0; margin: 0; max-width: var(--measure); }
+.courses li { padding: 0.7rem 0; border-bottom: 1px dotted var(--rule); }
+.courses .code { font-variant-numeric: tabular-nums; color: var(--ink-soft); font-size: 0.9rem; margin-right: 0.5rem; }
+
+/* ---------- Footer ---------- */
+
+.site-footer { border-top: 1px solid var(--rule); padding: 1.6rem 0 2.4rem; font-size: 0.88rem; color: var(--ink-soft); }
+.site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+.site-footer ul { display: flex; flex-wrap: wrap; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+
+/* ---------- Small screens ---------- */
+
+@media (max-width: 720px) {
+  h1 { font-size: 1.9rem; }
+  .intro { grid-template-columns: 1fr; gap: 1.5rem; }
+  .intro .portrait { order: -1; max-width: 120px; margin-top: 0; }
+  .paper { grid-template-columns: 1fr; gap: 0.9rem; }
+  .paper figure img { max-width: 420px; }
+  .news li, .pubs > li { grid-template-columns: 1fr; gap: 0; }
+}
